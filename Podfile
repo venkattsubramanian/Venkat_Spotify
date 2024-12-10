@@ -6,5 +6,7 @@ target 'Venkat_Spotify' do
   use_frameworks!
 
   # Pods for Venkat_Spotify
+  pod 'Kingfisher'
+
 
 end
