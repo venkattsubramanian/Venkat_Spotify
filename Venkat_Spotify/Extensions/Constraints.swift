@@ -1,11 +1,12 @@
 //
-//  LayoutConstraints.swift
-//  Venkat_Spotify
+//  Constraints.swift
+//  Carspa
 //
-//  Created by venkat subramaian on 10/12/24.
+//  Created by Ait iMac 02 on 15/04/24.
 //
 
 import Foundation
+
 import UIKit
 
 // MARK: - NSLayoutDimension
@@ -58,6 +59,22 @@ extension NSLayoutXAxisAnchor {
     }
     
     @discardableResult
+    static func >= (lhs: NSLayoutXAxisAnchor, rhs: Constraint) -> NSLayoutConstraint {
+        let constraint = lhs.constraint(greaterThanOrEqualTo: rhs.constraint, constant: rhs.constant)
+        constraint.isActive = true
+        (constraint.firstItem as? UIView)?.translatesAutoresizingMaskIntoConstraints = false
+        return constraint
+    }
+    
+    @discardableResult
+    static func <= (lhs: NSLayoutXAxisAnchor, rhs: Constraint) -> NSLayoutConstraint {
+        let constraint = lhs.constraint(lessThanOrEqualTo: rhs.constraint, constant: rhs.constant)
+        constraint.isActive = true
+        (constraint.firstItem as? UIView)?.translatesAutoresizingMaskIntoConstraints = false
+        return constraint
+    }
+    
+    @discardableResult
     static func + (lhs: NSLayoutXAxisAnchor, rhs: CGFloat) -> Constraint {
         return Constraint(constraint: lhs, constant: rhs)
     }
@@ -92,6 +109,22 @@ extension NSLayoutYAxisAnchor {
     @discardableResult
     static func == (lhs: NSLayoutYAxisAnchor, rhs: Constraint) -> NSLayoutConstraint {
         let constraint = lhs.constraint(equalTo: rhs.constraint, constant: rhs.value)
+        constraint.isActive = true
+        (constraint.firstItem as? UIView)?.translatesAutoresizingMaskIntoConstraints = false
+        return constraint
+    }
+    
+    @discardableResult
+    static func >= (lhs: NSLayoutYAxisAnchor, rhs: Constraint) -> NSLayoutConstraint {
+        let constraint = lhs.constraint(greaterThanOrEqualTo: rhs.constraint, constant: rhs.value)
+        constraint.isActive = true
+        (constraint.firstItem as? UIView)?.translatesAutoresizingMaskIntoConstraints = false
+        return constraint
+    }
+    
+    @discardableResult
+    static func <= (lhs: NSLayoutYAxisAnchor, rhs: Constraint) -> NSLayoutConstraint {
+        let constraint = lhs.constraint(lessThanOrEqualTo: rhs.constraint, constant: rhs.value)
         constraint.isActive = true
         (constraint.firstItem as? UIView)?.translatesAutoresizingMaskIntoConstraints = false
         return constraint
@@ -144,45 +177,6 @@ struct LayoutEdgesAnchor {
         return [top, trailing, bottom, leading]
     }
 }
-
-struct LayoutEdgesAnchorWithOutBottom {
-    let top: NSLayoutYAxisAnchor
-    let trailing: NSLayoutXAxisAnchor
-    let leading: NSLayoutXAxisAnchor
-
-    struct Constraint {
-        let edges: LayoutEdgesAnchorWithOutBottom
-        let insets: UIEdgeInsets
-    }
-
-    @discardableResult
-    static func == (lhs: LayoutEdgesAnchorWithOutBottom, rhs: LayoutEdgesAnchorWithOutBottom) -> [NSLayoutConstraint] {
-        let top = lhs.top == rhs.top
-        let trailing = lhs.trailing == rhs.trailing
-        let leading = lhs.leading == rhs.leading
-        return [top, trailing, leading]
-    }
-}
-
-struct LayoutEdgesAnchorWithOutTop {
-    let bottom: NSLayoutYAxisAnchor
-    let trailing: NSLayoutXAxisAnchor
-    let leading: NSLayoutXAxisAnchor
-
-    struct Constraint {
-        let edges: LayoutEdgesAnchorWithOutTop
-        let insets: UIEdgeInsets
-    }
-
-    @discardableResult
-    static func == (lhs: LayoutEdgesAnchorWithOutTop, rhs: LayoutEdgesAnchorWithOutTop) -> [NSLayoutConstraint] {
-        let bottom = lhs.bottom == rhs.bottom
-        let trailing = lhs.trailing == rhs.trailing
-        let leading = lhs.leading == rhs.leading
-        return [bottom, trailing, leading]
-    }
-}
-
 // MARK: - UIView
 
 extension UIView {
@@ -225,13 +219,5 @@ extension UIView {
     
     var edges: LayoutEdgesAnchor {
         return LayoutEdgesAnchor(top: top, trailing: trailing, bottom: bottom, leading: leading)
-    }
-
-    var exceptTop: LayoutEdgesAnchorWithOutTop {
-        return LayoutEdgesAnchorWithOutTop(bottom: bottom, trailing: trailing, leading: leading)
-    }
-
-    var exceptBottom: LayoutEdgesAnchorWithOutBottom {
-        return LayoutEdgesAnchorWithOutBottom(top: top, trailing: trailing, leading: leading)
     }
 }

@@ -8,16 +8,40 @@
 
 /* Begin PBXBuildFile section */
 		1A6BF91BFE5CA437E36D1A4F /* Pods_Venkat_Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7C346E67C0F1E32A7CCCA7 /* Pods_Venkat_Spotify.framework */; };
+		4EE0DC502D0814FE0055EFCA /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC4F2D0814FE0055EFCA /* SearchViewController.swift */; };
+		4EE0DC532D081A2A0055EFCA /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC522D081A2A0055EFCA /* UIView.swift */; };
+		4EE0DC5F2D081BB70055EFCA /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC542D081BB60055EFCA /* UIButton.swift */; };
+		4EE0DC602D081BB70055EFCA /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC552D081BB60055EFCA /* UITableView.swift */; };
+		4EE0DC612D081BB70055EFCA /* UIViewcontroller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC562D081BB60055EFCA /* UIViewcontroller.swift */; };
+		4EE0DC622D081BB70055EFCA /* Label.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC572D081BB60055EFCA /* Label.swift */; };
+		4EE0DC632D081BB70055EFCA /* Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC582D081BB60055EFCA /* Constraints.swift */; };
+		4EE0DC642D081BB70055EFCA /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC592D081BB60055EFCA /* UIColor.swift */; };
+		4EE0DC652D081BB70055EFCA /* AspectRatio.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC5A2D081BB60055EFCA /* AspectRatio.swift */; };
+		4EE0DC662D081BB70055EFCA /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC5B2D081BB60055EFCA /* String.swift */; };
+		4EE0DC672D081BB70055EFCA /* UIImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC5C2D081BB60055EFCA /* UIImageView.swift */; };
+		4EE0DC682D081BB70055EFCA /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC5D2D081BB70055EFCA /* Notification.swift */; };
+		4EE0DC692D081BB70055EFCA /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EE0DC5E2D081BB70055EFCA /* Font.swift */; };
 		FB36023C2D08101A0082FB64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB36023B2D08101A0082FB64 /* AppDelegate.swift */; };
 		FB3602402D08101A0082FB64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB36023F2D08101A0082FB64 /* ViewController.swift */; };
 		FB3602452D08101E0082FB64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB3602442D08101E0082FB64 /* Assets.xcassets */; };
 		FB3602482D08101E0082FB64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3602462D08101E0082FB64 /* LaunchScreen.storyboard */; };
-		FB3602542D0816EA0082FB64 /* LayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3602532D0816EA0082FB64 /* LayoutConstraints.swift */; };
-		FB3602572D08174B0082FB64 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3602562D08174B0082FB64 /* Extension + UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		44E2EB9B3D9C52CD91CC90ED /* Pods-Venkat_Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venkat_Spotify.release.xcconfig"; path = "Target Support Files/Pods-Venkat_Spotify/Pods-Venkat_Spotify.release.xcconfig"; sourceTree = "<group>"; };
+		4EE0DC4F2D0814FE0055EFCA /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		4EE0DC522D081A2A0055EFCA /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		4EE0DC542D081BB60055EFCA /* UIButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		4EE0DC552D081BB60055EFCA /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		4EE0DC562D081BB60055EFCA /* UIViewcontroller.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewcontroller.swift; sourceTree = "<group>"; };
+		4EE0DC572D081BB60055EFCA /* Label.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Label.swift; sourceTree = "<group>"; };
+		4EE0DC582D081BB60055EFCA /* Constraints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraints.swift; sourceTree = "<group>"; };
+		4EE0DC592D081BB60055EFCA /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		4EE0DC5A2D081BB60055EFCA /* AspectRatio.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AspectRatio.swift; sourceTree = "<group>"; };
+		4EE0DC5B2D081BB60055EFCA /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		4EE0DC5C2D081BB60055EFCA /* UIImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageView.swift; sourceTree = "<group>"; };
+		4EE0DC5D2D081BB70055EFCA /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		4EE0DC5E2D081BB70055EFCA /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		6C7C346E67C0F1E32A7CCCA7 /* Pods_Venkat_Spotify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Venkat_Spotify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75F3F07C64127C08D51A8BB3 /* Pods-Venkat_Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venkat_Spotify.debug.xcconfig"; path = "Target Support Files/Pods-Venkat_Spotify/Pods-Venkat_Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		FB3602382D08101A0082FB64 /* Venkat_Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Venkat_Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -26,8 +50,6 @@
 		FB3602442D08101E0082FB64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB3602472D08101E0082FB64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB3602492D08101E0082FB64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB3602532D0816EA0082FB64 /* LayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraints.swift; sourceTree = "<group>"; };
-		FB3602562D08174B0082FB64 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +64,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4EE0DC4D2D0814CA0055EFCA /* search */ = {
+			isa = PBXGroup;
+			children = (
+				4EE0DC4E2D0814DD0055EFCA /* ViewController */,
+			);
+			path = search;
+			sourceTree = "<group>";
+		};
+		4EE0DC4E2D0814DD0055EFCA /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				4EE0DC4F2D0814FE0055EFCA /* SearchViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		4EE0DC512D0819670055EFCA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				4EE0DC522D081A2A0055EFCA /* UIView.swift */,
+				4EE0DC5A2D081BB60055EFCA /* AspectRatio.swift */,
+				4EE0DC582D081BB60055EFCA /* Constraints.swift */,
+				4EE0DC5E2D081BB70055EFCA /* Font.swift */,
+				4EE0DC5D2D081BB70055EFCA /* Notification.swift */,
+				4EE0DC5B2D081BB60055EFCA /* String.swift */,
+				4EE0DC542D081BB60055EFCA /* UIButton.swift */,
+				4EE0DC592D081BB60055EFCA /* UIColor.swift */,
+				4EE0DC5C2D081BB60055EFCA /* UIImageView.swift */,
+				4EE0DC552D081BB60055EFCA /* UITableView.swift */,
+				4EE0DC562D081BB60055EFCA /* UIViewcontroller.swift */,
+				4EE0DC572D081BB60055EFCA /* Label.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		988FC2719DF61CB7F8AB7883 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -80,55 +137,15 @@
 		FB36023A2D08101A0082FB64 /* Venkat_Spotify */ = {
 			isa = PBXGroup;
 			children = (
+				4EE0DC512D0819670055EFCA /* Extensions */,
+				4EE0DC4D2D0814CA0055EFCA /* search */,
 				FB36023B2D08101A0082FB64 /* AppDelegate.swift */,
-				FB36024F2D0816890082FB64 /* Library */,
-				FB3602522D0816C90082FB64 /* Common */,
-				FB3602552D0817270082FB64 /* Extensions */,
+				FB36023F2D08101A0082FB64 /* ViewController.swift */,
 				FB3602442D08101E0082FB64 /* Assets.xcassets */,
 				FB3602462D08101E0082FB64 /* LaunchScreen.storyboard */,
 				FB3602492D08101E0082FB64 /* Info.plist */,
 			);
 			path = Venkat_Spotify;
-			sourceTree = "<group>";
-		};
-		FB36024F2D0816890082FB64 /* Library */ = {
-			isa = PBXGroup;
-			children = (
-				FB3602512D0816B80082FB64 /* View */,
-				FB3602502D0816A40082FB64 /* ViewController */,
-			);
-			path = Library;
-			sourceTree = "<group>";
-		};
-		FB3602502D0816A40082FB64 /* ViewController */ = {
-			isa = PBXGroup;
-			children = (
-				FB36023F2D08101A0082FB64 /* ViewController.swift */,
-			);
-			path = ViewController;
-			sourceTree = "<group>";
-		};
-		FB3602512D0816B80082FB64 /* View */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		FB3602522D0816C90082FB64 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				FB3602532D0816EA0082FB64 /* LayoutConstraints.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		FB3602552D0817270082FB64 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				FB3602562D08174B0082FB64 /* Extension + UIView.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,10 +244,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FB3602572D08174B0082FB64 /* Extension + UIView.swift in Sources */,
-				FB3602542D0816EA0082FB64 /* LayoutConstraints.swift in Sources */,
+				4EE0DC672D081BB70055EFCA /* UIImageView.swift in Sources */,
+				4EE0DC612D081BB70055EFCA /* UIViewcontroller.swift in Sources */,
 				FB3602402D08101A0082FB64 /* ViewController.swift in Sources */,
+				4EE0DC602D081BB70055EFCA /* UITableView.swift in Sources */,
+				4EE0DC642D081BB70055EFCA /* UIColor.swift in Sources */,
+				4EE0DC632D081BB70055EFCA /* Constraints.swift in Sources */,
+				4EE0DC682D081BB70055EFCA /* Notification.swift in Sources */,
+				4EE0DC532D081A2A0055EFCA /* UIView.swift in Sources */,
+				4EE0DC652D081BB70055EFCA /* AspectRatio.swift in Sources */,
+				4EE0DC692D081BB70055EFCA /* Font.swift in Sources */,
+				4EE0DC622D081BB70055EFCA /* Label.swift in Sources */,
+				4EE0DC502D0814FE0055EFCA /* SearchViewController.swift in Sources */,
 				FB36023C2D08101A0082FB64 /* AppDelegate.swift in Sources */,
+				4EE0DC662D081BB70055EFCA /* String.swift in Sources */,
+				4EE0DC5F2D081BB70055EFCA /* UIButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -372,12 +400,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H2C4R2VE3A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Venkat_Spotify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -389,7 +416,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -401,12 +428,11 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = H2C4R2VE3A;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Venkat_Spotify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -418,7 +444,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = 1;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
