@@ -1,0 +1,6 @@
+framework module Pods_Venkat_Spotify {
+  umbrella header "Pods-Venkat_Spotify-umbrella.h"
+
+  export *
+  module * { export * }
+}

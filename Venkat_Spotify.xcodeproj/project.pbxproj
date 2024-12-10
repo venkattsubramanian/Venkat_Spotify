@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A6BF91BFE5CA437E36D1A4F /* Pods_Venkat_Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7C346E67C0F1E32A7CCCA7 /* Pods_Venkat_Spotify.framework */; };
 		FB36023C2D08101A0082FB64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB36023B2D08101A0082FB64 /* AppDelegate.swift */; };
 		FB36023E2D08101A0082FB64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB36023D2D08101A0082FB64 /* SceneDelegate.swift */; };
 		FB3602402D08101A0082FB64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB36023F2D08101A0082FB64 /* ViewController.swift */; };
@@ -16,6 +17,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		44E2EB9B3D9C52CD91CC90ED /* Pods-Venkat_Spotify.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venkat_Spotify.release.xcconfig"; path = "Target Support Files/Pods-Venkat_Spotify/Pods-Venkat_Spotify.release.xcconfig"; sourceTree = "<group>"; };
+		6C7C346E67C0F1E32A7CCCA7 /* Pods_Venkat_Spotify.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Venkat_Spotify.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75F3F07C64127C08D51A8BB3 /* Pods-Venkat_Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venkat_Spotify.debug.xcconfig"; path = "Target Support Files/Pods-Venkat_Spotify/Pods-Venkat_Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		FB3602382D08101A0082FB64 /* Venkat_Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Venkat_Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB36023B2D08101A0082FB64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FB36023D2D08101A0082FB64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1A6BF91BFE5CA437E36D1A4F /* Pods_Venkat_Spotify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		988FC2719DF61CB7F8AB7883 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75F3F07C64127C08D51A8BB3 /* Pods-Venkat_Spotify.debug.xcconfig */,
+				44E2EB9B3D9C52CD91CC90ED /* Pods-Venkat_Spotify.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		E25023BAA3E9B86BD1A66E76 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				6C7C346E67C0F1E32A7CCCA7 /* Pods_Venkat_Spotify.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FB36022F2D08101A0082FB64 = {
 			isa = PBXGroup;
 			children = (
 				FB36023A2D08101A0082FB64 /* Venkat_Spotify */,
 				FB3602392D08101A0082FB64 /* Products */,
+				988FC2719DF61CB7F8AB7883 /* Pods */,
+				E25023BAA3E9B86BD1A66E76 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +99,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FB36024C2D08101E0082FB64 /* Build configuration list for PBXNativeTarget "Venkat_Spotify" */;
 			buildPhases = (
+				3371B1D6E838FBE41A1A8F4E /* [CP] Check Pods Manifest.lock */,
 				FB3602342D08101A0082FB64 /* Sources */,
 				FB3602352D08101A0082FB64 /* Frameworks */,
 				FB3602362D08101A0082FB64 /* Resources */,
@@ -132,6 +158,31 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3371B1D6E838FBE41A1A8F4E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Venkat_Spotify-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FB3602342D08101A0082FB64 /* Sources */ = {
@@ -284,6 +335,7 @@
 		};
 		FB36024D2D08101E0082FB64 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75F3F07C64127C08D51A8BB3 /* Pods-Venkat_Spotify.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -311,6 +363,7 @@
 		};
 		FB36024E2D08101E0082FB64 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 44E2EB9B3D9C52CD91CC90ED /* Pods-Venkat_Spotify.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
