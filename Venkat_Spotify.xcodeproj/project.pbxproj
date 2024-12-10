@@ -9,11 +9,11 @@
 /* Begin PBXBuildFile section */
 		1A6BF91BFE5CA437E36D1A4F /* Pods_Venkat_Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C7C346E67C0F1E32A7CCCA7 /* Pods_Venkat_Spotify.framework */; };
 		FB36023C2D08101A0082FB64 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB36023B2D08101A0082FB64 /* AppDelegate.swift */; };
-		FB36023E2D08101A0082FB64 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB36023D2D08101A0082FB64 /* SceneDelegate.swift */; };
 		FB3602402D08101A0082FB64 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB36023F2D08101A0082FB64 /* ViewController.swift */; };
-		FB3602432D08101A0082FB64 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3602412D08101A0082FB64 /* Main.storyboard */; };
 		FB3602452D08101E0082FB64 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FB3602442D08101E0082FB64 /* Assets.xcassets */; };
 		FB3602482D08101E0082FB64 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FB3602462D08101E0082FB64 /* LaunchScreen.storyboard */; };
+		FB3602542D0816EA0082FB64 /* LayoutConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3602532D0816EA0082FB64 /* LayoutConstraints.swift */; };
+		FB3602572D08174B0082FB64 /* Extension + UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FB3602562D08174B0082FB64 /* Extension + UIView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,12 +22,12 @@
 		75F3F07C64127C08D51A8BB3 /* Pods-Venkat_Spotify.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Venkat_Spotify.debug.xcconfig"; path = "Target Support Files/Pods-Venkat_Spotify/Pods-Venkat_Spotify.debug.xcconfig"; sourceTree = "<group>"; };
 		FB3602382D08101A0082FB64 /* Venkat_Spotify.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Venkat_Spotify.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FB36023B2D08101A0082FB64 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FB36023D2D08101A0082FB64 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FB36023F2D08101A0082FB64 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		FB3602422D08101A0082FB64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FB3602442D08101E0082FB64 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FB3602472D08101E0082FB64 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FB3602492D08101E0082FB64 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FB3602532D0816EA0082FB64 /* LayoutConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutConstraints.swift; sourceTree = "<group>"; };
+		FB3602562D08174B0082FB64 /* Extension + UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension + UIView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -48,7 +48,6 @@
 				75F3F07C64127C08D51A8BB3 /* Pods-Venkat_Spotify.debug.xcconfig */,
 				44E2EB9B3D9C52CD91CC90ED /* Pods-Venkat_Spotify.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -82,14 +81,54 @@
 			isa = PBXGroup;
 			children = (
 				FB36023B2D08101A0082FB64 /* AppDelegate.swift */,
-				FB36023D2D08101A0082FB64 /* SceneDelegate.swift */,
-				FB36023F2D08101A0082FB64 /* ViewController.swift */,
-				FB3602412D08101A0082FB64 /* Main.storyboard */,
+				FB36024F2D0816890082FB64 /* Library */,
+				FB3602522D0816C90082FB64 /* Common */,
+				FB3602552D0817270082FB64 /* Extensions */,
 				FB3602442D08101E0082FB64 /* Assets.xcassets */,
 				FB3602462D08101E0082FB64 /* LaunchScreen.storyboard */,
 				FB3602492D08101E0082FB64 /* Info.plist */,
 			);
 			path = Venkat_Spotify;
+			sourceTree = "<group>";
+		};
+		FB36024F2D0816890082FB64 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				FB3602512D0816B80082FB64 /* View */,
+				FB3602502D0816A40082FB64 /* ViewController */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		FB3602502D0816A40082FB64 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				FB36023F2D08101A0082FB64 /* ViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		FB3602512D0816B80082FB64 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FB3602522D0816C90082FB64 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				FB3602532D0816EA0082FB64 /* LayoutConstraints.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		FB3602552D0817270082FB64 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				FB3602562D08174B0082FB64 /* Extension + UIView.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,7 +192,6 @@
 			files = (
 				FB3602482D08101E0082FB64 /* LaunchScreen.storyboard in Resources */,
 				FB3602452D08101E0082FB64 /* Assets.xcassets in Resources */,
-				FB3602432D08101A0082FB64 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,23 +227,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FB3602572D08174B0082FB64 /* Extension + UIView.swift in Sources */,
+				FB3602542D0816EA0082FB64 /* LayoutConstraints.swift in Sources */,
 				FB3602402D08101A0082FB64 /* ViewController.swift in Sources */,
 				FB36023C2D08101A0082FB64 /* AppDelegate.swift in Sources */,
-				FB36023E2D08101A0082FB64 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		FB3602412D08101A0082FB64 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				FB3602422D08101A0082FB64 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		FB3602462D08101E0082FB64 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -341,11 +372,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Venkat_Spotify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -357,7 +389,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -369,11 +401,12 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Venkat_Spotify/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -385,7 +418,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
