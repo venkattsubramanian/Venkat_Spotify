@@ -119,11 +119,18 @@ extension UIImage {
     static let accountIcon = UIImage(named: "icon-account")
     static let menuIcon =   UIImage(named: "icon-more")
     
+    
+    
     static let carspaLogo = UIImage(named: "CarspaLogo")
     
     static let noPlans = UIImage(named: "no_plans")
     
     static let checkmarkRight = UIImage(systemName: "checkmark.square.fill")
+    
+    
+    static let search =   UIImage(named: "Search")
+    static let home =   UIImage(named: "home")
+    static let library =   UIImage(named: "library")
 }
 
 extension UIImage {

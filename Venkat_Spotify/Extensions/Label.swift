@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 class createLabel {
-    static func setLabel(font: UIFont, textColor: UIColor = .appBlackColor, textAlignment: NSTextAlignment = .left, text: String? = nil, noofLines: Int = 0) -> UILabel {
+    static func setLabel(font: UIFont, textColor: UIColor = .appWhiteColor, textAlignment: NSTextAlignment = .left, text: String? = nil, noofLines: Int = 0) -> UILabel {
         let label = UILabel()
         label.font = font
         label.textColor = textColor

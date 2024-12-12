@@ -7,6 +7,7 @@ target 'Venkat_Spotify' do
 
   # Pods for Venkat_Spotify
   pod 'Kingfisher'
+  pod 'TinyConstraints'
 
 
 end

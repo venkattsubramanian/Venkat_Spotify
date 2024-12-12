@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func gotoMainScreens() {
-        setRootController(SearchViewController())
+        setRootController(LibraryViewController())
     }
     
     func setRootController(_ viewController: UIViewController) {

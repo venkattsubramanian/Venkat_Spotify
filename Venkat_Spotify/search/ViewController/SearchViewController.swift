@@ -1,59 +1,70 @@
 //
-//  SearchViewController.swift
+//  HomeViewController.swift
 //  Venkat_Spotify
 //
-//  Created by Achu Anil's MacBook Pro on 10/12/24.
+//  Created by venkat subramaian on 11/12/24.
 //
 
 import Foundation
 import UIKit
 
-class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
+class SearchViewController: BaseViewController, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate {
 
     private var tableView: UITableView!
     private var searchBar: UISearchBar!
     private var cancelButton: UIButton!
     private var recentSearches: [String] = []
     private var searchResults: [Track] = []
+    private var searchTask: DispatchWorkItem?
+
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
-        loadRecentSearches()
+//        loadRecentSearches()
+        self.currentTabbar(.search)
+//        setupCustomBackButton()
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
-    private func setupUI() {
-        view.backgroundColor = .systemBackground // Dynamic color
 
-        // Search Bar
+    private func setupUI() {
+        view.backgroundColor = .black
+        
         searchBar = UISearchBar()
         searchBar.placeholder = "Search for songs or artists"
+        searchBar.searchTextField.textColor = .white
         searchBar.delegate = self
         searchBar.searchBarStyle = .minimal
         searchBar.translatesAutoresizingMaskIntoConstraints = false
+        searchBar.backgroundColor = .black
         view.addSubview(searchBar)
+        self.addFooterView()
 
-        // Cancel Button
         cancelButton = UIButton(type: .system)
         cancelButton.setTitle("Cancel", for: .normal)
         cancelButton.titleLabel?.font = UIFont.systemFont(ofSize: 16)
+        cancelButton.tintColor = .white
         cancelButton.addTarget(self, action: #selector(didTapCancel), for: .touchUpInside)
         cancelButton.translatesAutoresizingMaskIntoConstraints = false
         view.addSubview(cancelButton)
 
-        // Table View
         tableView = UITableView()
         tableView.translatesAutoresizingMaskIntoConstraints = false
         tableView.dataSource = self
         tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell") // Register for recent searches
-
+        tableView.backgroundColor = .black
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         tableView.register(SearchResultCell.self, forCellReuseIdentifier: SearchResultCell.identifier)
         view.addSubview(tableView)
 
-        // Constraints
         NSLayoutConstraint.activate([
-            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
+            searchBar.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 50),
             searchBar.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             searchBar.trailingAnchor.constraint(equalTo: cancelButton.leadingAnchor, constant: -8),
             searchBar.heightAnchor.constraint(equalToConstant: 44),
@@ -64,7 +75,7 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
             tableView.topAnchor.constraint(equalTo: searchBar.bottomAnchor, constant: 8),
             tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -100)
         ])
     }
 
@@ -73,6 +84,8 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         searchBar.resignFirstResponder()
         searchResults = []
         tableView.reloadData()
+        navigationController?.popViewController(animated: true)
+
     }
 
     private func loadRecentSearches() {
@@ -95,6 +108,21 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
             }
         }
     }
+    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+           searchTask?.cancel()
+           let task = DispatchWorkItem { [weak self] in
+               guard let self = self else { return }
+               if !searchText.isEmpty {
+                   self.fetchSearchResults(searchTerm: searchText)
+               } else {
+                   self.searchResults = []
+                   self.tableView.reloadData()
+               }
+           }
+           self.searchTask = task
+           DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: task)
+       }
 
     // MARK: - UISearchBarDelegate
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -131,6 +159,12 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
         } else {
             let selectedTrack = searchResults[indexPath.row]
             print("Selected track: \(selectedTrack.trackName ?? "Unknown")")
+            let dbHandler = DBHandler()
+            dbHandler.insertTrack(
+                trackName: selectedTrack.trackName ?? "Unknown",
+                artistName: selectedTrack.artistName ?? "Unknown",
+                trackURL: selectedTrack.artworkUrl100 ?? ""
+            )
         }
     }
     
@@ -140,81 +174,6 @@ class SearchViewController: UIViewController, UISearchBarDelegate, UITableViewDa
 }
 
 
-
-
-
-
-
-
-class SearchResultCell: UITableViewCell {
-    static let identifier = "SearchResultCell"
-
-    private let songImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        imageView.layer.cornerRadius = 8 // Rounded corners
-        return imageView
-    }()
-
-    private let trackNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 16)
-        label.numberOfLines = 1
-        label.textColor = .label // Dynamic color
-        return label
-    }()
-
-    private let artistNameLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14)
-        label.numberOfLines = 1
-        label.textColor = .secondaryLabel // Dynamic color
-        return label
-    }()
-
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        contentView.addSubview(songImageView)
-        contentView.addSubview(trackNameLabel)
-        contentView.addSubview(artistNameLabel)
-    }
-
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        let padding: CGFloat = 10
-        let imageSize: CGFloat = 50
-
-        songImageView.frame = CGRect(x: padding, y: padding, width: imageSize, height: imageSize)
-        trackNameLabel.frame = CGRect(x: songImageView.frame.maxX + padding,
-                                       y: padding,
-                                       width: contentView.frame.width - imageSize - 3 * padding,
-                                       height: 20)
-        artistNameLabel.frame = CGRect(x: songImageView.frame.maxX + padding,
-                                        y: trackNameLabel.frame.maxY + 5,
-                                        width: contentView.frame.width - imageSize - 3 * padding,
-                                        height: 20)
-    }
-
-    func configure(with track: Track) {
-        trackNameLabel.text = track.trackName
-        artistNameLabel.text = track.artistName
-        if let imageUrl = URL(string: track.artworkUrl100 ?? "") {
-            // Load image asynchronously (you can use libraries like Kingfisher)
-            DispatchQueue.global().async {
-                if let data = try? Data(contentsOf: imageUrl) {
-                    DispatchQueue.main.async {
-                        self.songImageView.image = UIImage(data: data)
-                    }
-                }
-            }
-        }
-    }
-}
 
 
 struct SearchResult: Decodable {
